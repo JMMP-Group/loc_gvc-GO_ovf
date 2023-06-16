@@ -1,0 +1,9 @@
+#!/bin/bash -l
+
+#SBATCH --qos=normal                
+#SBATCH --mem=100000                    
+#SBATCH --ntasks=8                   
+#SBATCH --output=broken_line.out       
+#SBATCH --time=360                    
+
+./create_osnap_sec.sh
