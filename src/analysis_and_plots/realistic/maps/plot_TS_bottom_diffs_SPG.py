@@ -46,13 +46,13 @@ class TwoInnerPointsNormalize(colors.Normalize):
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-DOMCFG_zps = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
-DOMCFG_szt = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc'
-DOMCFG_MEs = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
+DOMCFG_zps = base_dir + '/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
+DOMCFG_szt = base_dir + '/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc'
+DOMCFG_MEs = base_dir + '/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
 
-Tzpsdir = base_dir + '/loc_gvc-nordic_ovf/outputs/realistic/zps'
-Tsztdir = base_dir + '/loc_gvc-nordic_ovf/outputs/realistic/szt'
-Tmesdir = base_dir + '/loc_gvc-nordic_ovf/outputs/realistic/MEs'
+Tzpsdir = base_dir + '/realistic/zps'
+Tsztdir = base_dir + '/realistic/szt'
+Tmesdir = base_dir + '/realistic/MEs'
 
 # 3. PLOT
 # 3. PLOT

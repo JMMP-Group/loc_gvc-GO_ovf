@@ -20,8 +20,8 @@ from matplotlib.gridspec import GridSpec
 base_dir = "/your_local_path"
 
 
-mod_dir = base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/"
-obs_dir = base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/obs/ovf_transport/"
+mod_dir = base_dir + "/realistic/"
+obs_dir = base_dir + "/realistic/obs/ovf_transport/"
 sections = ["latrabjarg","ifr","fbc","wtr","cgfz","osnap-IB","osnap-IS"]
 cols = ["black","red","dodgerblue","limegreen"]
 

@@ -25,13 +25,13 @@ base_dir = "/your_local_path"
 
 exp_list = ["zps", "szt", "mes"]
 
-domcfg_base = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/ideal'
+domcfg_base = base_dir + '/models_geometry/dom_cfg/ideal'
 
 DOMCFG_list = [domcfg_base + '/zps/domain_cfg_zps.nc',
                domcfg_base + '/szt/domain_cfg_szt.nc',
                domcfg_base + '/mes/domain_cfg_mes.nc']
 
-comm_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/ideal_ovf'
+comm_dir = base_dir + '/ideal_ovf'
 
 file1 = "nemo_cg602o_1d_19760101-19760201_grid_T.nc"
 file2 = "nemo_cg602o_1d_19760201-19760301_grid_T.nc"

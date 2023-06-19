@@ -132,7 +132,7 @@ def get_poly_line_ij(points_i, points_j):
 base_dir = "/your_local_path"
 
 # Load GO bathymetry
-GO_bat = base_dir + "/loc_gvc-nordic_ovf/models_geometry/eORCA025_bathymetry.nc"
+GO_bat = base_dir + "/models_geometry/eORCA025_bathymetry.nc"
 ds_bathy = xr.open_dataset(GO_bat).squeeze()
 bathy = ds_bathy["Bathymetry"].squeeze()
 
@@ -157,5 +157,5 @@ plt.show()
 # -------------------------------------------------------------------------------------   
 # Writing the bathy_meter.nc file
 
-out_file = "/your_local_path/loc_gvc-nordic_ovf/models_geometry/eORCA025_bathymetry_ideal.nc"
+out_file = base_dir + "/models_geometry/eORCA025_bathymetry_ideal.nc"
 ds_bathy.to_netcdf(out_file)

@@ -38,12 +38,12 @@ proj = ccrs.Mercator() #ccrs.Robinson()
 
 for vco in range(len(vcoord)):
 
-    HPGE_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/hpge' + vcoord[vco]
+    HPGE_dir = base_dir + '/hpge/' + vcoord[vco]
     if vcoord[vco] == 'vqs': HPGE_dir = HPGE_dir + "/r12-r075-r004_v3"
     if vcoord[vco] == 'mes': HPGE_dir = HPGE_dir + "/r12_r12-r075-r040_v3"
     HPGE_file = HPGE_dir + "/maximum_hpge.nc"
 
-    DOMCFG_dir = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/' + vco
+    DOMCFG_dir = base_dir + '/models_geometry/dom_cfg/realistic/' + vco
     DOMCFG_file = DOMCFG_dir + '/domain_cfg_' + vco + '.nc'
 
     # Loading domain geometry

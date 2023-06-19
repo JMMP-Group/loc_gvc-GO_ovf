@@ -14,7 +14,7 @@ from utils import compute_masks
 
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
-DOMCFG_zps = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
+DOMCFG_zps = base_dir + '/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
 
 # 2. ANALYSIS
 

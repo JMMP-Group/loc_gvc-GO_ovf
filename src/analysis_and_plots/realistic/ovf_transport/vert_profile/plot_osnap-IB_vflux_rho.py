@@ -11,10 +11,10 @@ import matplotlib.gridspec as gridspec
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-exp = [base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/obs/ovf_transport/vflux_rho-IB_obs.nc",
-       base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/zps/vflux_rho-IB_zps.nc",
-       base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/szt/vflux_rho-IB_szt.nc",
-       base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/MEs/vflux_rho-IB_MEs.nc"
+exp = [base_dir + "/realistic/obs/ovf_transport/vflux_rho-IB_obs.nc",
+       base_dir + "/realistic/zps/vflux_rho-IB_zps.nc",
+       base_dir + "/realistic/szt/vflux_rho-IB_szt.nc",
+       base_dir + "/realistic/MEs/vflux_rho-IB_MEs.nc"
       ]
 
 col = ["black","red","blue","limegreen"]

@@ -16,8 +16,8 @@ import matplotlib.colors as colors
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-DOMCFG_zps = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
-out_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/ideal_ovf'
+DOMCFG_zps = base_dir + '/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc'
+out_dir = base_dir + '/ideal_ovf'
 TRACER_list = [out_dir + '/zps/nemo_cg602o_1d_19760101-19760201_grid_T.nc',
                out_dir + '/zps/nemo_cg602o_1d_19760201-19760301_grid_T.nc',
                out_dir + '/zps/nemo_cg602o_1d_19760301-19760401_grid_T.nc',

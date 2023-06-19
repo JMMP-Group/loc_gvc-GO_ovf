@@ -17,9 +17,9 @@ import matplotlib.colors as colors
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-DOMCFG_MEs = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
-BATHY_MEs  = base_dir + '/loc_gvc-nordic_ovf/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
-out_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/ideal_ovf'
+DOMCFG_MEs = base_dir + '/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
+BATHY_MEs  = base_dir + '/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
+out_dir = base_dir + '/ideal_ovf'
 TRACER_list = [out_dir + '/mes/nemo_cg602o_1d_19760101-19760201_grid_T.nc',
                out_dir + '/mes/nemo_cg602o_1d_19760201-19760301_grid_T.nc',
                out_dir + '/mes/nemo_cg602o_1d_19760301-19760401_grid_T.nc',

@@ -58,13 +58,13 @@
 base_dir = "/your_local_path"
 
 # Bathymetry of the domain
-bathyFile = base_dir + '/loc_gvc-nordic_ovf/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1_ideal.nc'
+bathyFile = base_dir + '/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1_ideal.nc'
 
 # Horizontal grid of the domain
-hgridFile = base_dir + '/loc_gvc-nordic_ovf/models_geometry/eORCA025_coordinates.nc'
+hgridFile = base_dir + '/models_geometry/eORCA025_coordinates.nc'
 
 # domain_cfg.nc or mesh_mask.nc file of the z-levels grid
-zgridFile = base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc"
+zgridFile = base_dir + "/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc"
 
 # B) ENVELOPES geometrical parameters -------------------------------------
 
@@ -98,10 +98,10 @@ e_tap_equ = False
 # Use an empty list if you don't want to apply local smoothing to a particular envelope.
 e_loc_vel = [ [],
               [],
-              [base_dir + '/loc_gvc-nordic_ovf/outputs/hpge/mes/r12_r12/maximum_hpge.nc',
-               base_dir + '/loc_gvc-nordic_ovf/outputs/hpge/mes/r12_r12-r075/maximum_hpge.nc',
-               base_dir + '/loc_gvc-nordic_ovf/outputs/hpge/mes/r12_r12-r075-r040/maximum_hpge.nc',
-               base_dir + '/loc_gvc-nordic_ovf/outputs/hpge/mes/r12_r12-r075-r040_v2/maximum_hpge.nc'],
+              [base_dir + '/hpge/mes/r12_r12/maximum_hpge.nc',
+               base_dir + '/hpge/mes/r12_r12-r075/maximum_hpge.nc',
+               base_dir + '/hpge/mes/r12_r12-r075-r040/maximum_hpge.nc',
+               base_dir + '/hpge/mes/r12_r12-r075-r040_v2/maximum_hpge.nc'],
               [] ]
 e_loc_var = [ [], [], ['max_hpge_3','max_hpge_3','max_hpge_3','max_hpge_3'], [] ]
 # List of max spurious currents that will be used as a threshold

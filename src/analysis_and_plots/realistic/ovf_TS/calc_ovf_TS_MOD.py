@@ -36,9 +36,9 @@ def compute_levels(ds, merge=True):
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-domcfg = [base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc",
-          base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc",
-          base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc"]
+domcfg = [base_dir + "/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc",
+          base_dir + "/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc",
+          base_dir + "/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc"]
 inpdir =  "/local/path_to/monthly/model_data"
 exp = ['zps','szt','MEs']
 

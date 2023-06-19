@@ -19,7 +19,7 @@ from matplotlib.gridspec import GridSpec
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-data_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/realistic'
+data_dir = base_dir + '/realistic'
 
 sections = ["ho2000","latrabjarg","osnap-IB","osnap-IS","pos503-5"]
 cols = ["black","red","dodgerblue","limegreen"]

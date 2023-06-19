@@ -51,9 +51,9 @@ runsid = ["cn092", "cn093", "cn094"]
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
 
-DOMCFG = [base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc',
-          base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc',
-          base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
+DOMCFG = [base_dir + '/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc',
+          base_dir + '/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc',
+          base_dir + '/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc'
          ]
 
 # 3. PLOT
@@ -76,7 +76,7 @@ norm = TwoInnerPointsNormalize(vmin=0, vmax=0.5, low=0.1, up=0.2)
 
 # ==============================================================================
 
-outdir= base_dir + '/loc_gvc-nordic_ovf/outputs/realistic/'
+outdir= base_dir + '/realistic/'
 
 for m in range(len(models)):
 

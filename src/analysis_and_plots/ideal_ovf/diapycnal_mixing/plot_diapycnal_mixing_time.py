@@ -26,7 +26,7 @@ base_dir = "/your_local_path"
 
 exp_list = ["zps", "szt", "MEs"]
 
-comm_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/ideal_ovf'
+comm_dir = base_dir + '/ideal_ovf'
 
 File = "_dia_mixing_time_4d.nc"
 

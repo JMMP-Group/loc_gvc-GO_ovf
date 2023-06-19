@@ -14,8 +14,8 @@ from utils import compute_masks
 
 # Change this to match your local paths set-up
 base_dir = "/your_local_path"
-DOMCFG_szt = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc'
-BATHY_MEs = base_dir + '/loc_gvc-nordic_ovf/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
+DOMCFG_szt = base_dir + '/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc'
+BATHY_MEs = base_dir + '/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
 
 # 2. ANALYSIS
 

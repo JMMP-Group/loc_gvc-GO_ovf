@@ -37,9 +37,9 @@ def compute_levels(ds, merge=True):
 base_dir = "/your_local_path"
 base_inp = "/your/local/path/to/monthly/model/data"
 
-domcfg = [base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc",
-          base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc",
-          base_dir + "/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc"]
+domcfg = [base_dir + "/models_geometry/dom_cfg/realistic/zps/domain_cfg_zps.nc",
+          base_dir + "/models_geometry/dom_cfg/realistic/szt/domain_cfg_szt.nc",
+          base_dir + "/models_geometry/dom_cfg/realistic/mes/domain_cfg_mes.nc"]
 exp = ['zps','szt','MEs']
 
 for obs in range(6,7):

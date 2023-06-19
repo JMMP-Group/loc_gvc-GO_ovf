@@ -7,10 +7,10 @@
 base_dir = "/your_local_path"
 
 # Bathymetry of the domain
-bathyFile = base_dir + '/loc_gvc-nordic_ovf/models_geometry/eORCA025_bathymetry.nc'
+bathyFile = base_dir + '/models_geometry/eORCA025_bathymetry.nc'
 
 #Horizontal grid of the domain
-hgridFile = base_dir + '/loc_gvc-nordic_ovf/models_geometry/eORCA025_coordinates.nc'
+hgridFile = base_dir + '/models_geometry/eORCA025_coordinates.nc'
  
 # B) LOCALISATION AREA: parameters to identify
 #    limits of localisation area

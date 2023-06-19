@@ -65,9 +65,9 @@ def rho_bin_loop(vflux, rho, bins):
 base_dir = "/your_local_path"
 
 
-exp = [base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/zps/nemo_cn092o_20140101-20181001_osnap.nc",
-       base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/szt/nemo_cn093o_20140101-20181201_osnap.nc",
-       base_dir + "/loc_gvc-nordic_ovf/outputs/realistic/MEs/nemo_cn094o_20140101-20181201_osnap.nc"
+exp = [base_dir + "/realistic/zps/nemo_cn092o_20140101-20181001_osnap.nc",
+       base_dir + "/realistic/szt/nemo_cn093o_20140101-20181201_osnap.nc",
+       base_dir + "/realistic/MEs/nemo_cn094o_20140101-20181201_osnap.nc"
       ]
 lab = ["zps", "szt", "MEs"]
 

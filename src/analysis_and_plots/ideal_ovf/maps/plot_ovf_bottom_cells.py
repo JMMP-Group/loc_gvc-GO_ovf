@@ -27,8 +27,8 @@ import matplotlib.colors as colors
 base_dir = "/your_local_path"
 
 exp = "MEs" # "zps", "szt"
-DOMCFG_dir = base_dir + '/loc_gvc-nordic_ovf/models_geometry/dom_cfg/realistic/' + exp.lower()
-TRACER_dir = base_dir + '/loc_gvc-nordic_ovf/outputs/ideal_ovf/' + exp
+DOMCFG_dir = base_dir + '/models_geometry/dom_cfg/realistic/' + exp.lower()
+TRACER_dir = base_dir + '/ideal_ovf/' + exp
 
 DOMCFG_list = [DOMCFG_dir + '/domain_cfg_' + exp.lower() + '.nc']
 TRACER_list = [TRACER_dir + '/nemo_cg602o_1d_19760101-19760201_grid_T.nc',

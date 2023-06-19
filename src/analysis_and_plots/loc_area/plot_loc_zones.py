@@ -17,7 +17,7 @@ import matplotlib.gridspec as gridspec
 base_dir = "/your_local_path"
 
 sec = 'IB' # 'DS'
-loc_file = base_dir + '/loc_gvc-nordic_ovf/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
+loc_file = base_dir + '/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
 
 # 2. PLOT
 proj = ccrs.Mercator() #ccrs.Robinson()
