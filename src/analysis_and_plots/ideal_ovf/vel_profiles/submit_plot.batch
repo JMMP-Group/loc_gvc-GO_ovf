@@ -1,0 +1,9 @@
+#!/bin/bash -l
+
+#SBATCH --qos=normal                
+#SBATCH --mem=100000                    
+#SBATCH --ntasks=4                  
+#SBATCH --output=convert.out        
+#SBATCH --time=360       
+
+python plot_vel_profiles.py 

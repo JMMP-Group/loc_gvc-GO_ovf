@@ -10,12 +10,21 @@ import os
 from os.path import join, isfile, basename, splitext
 import glob
 import numpy as np
+import matplotlib as mpl
 from matplotlib import pyplot as plt
+import matplotlib.colors as colors
 import xarray as xr
 from xnemogcm import open_domain_cfg
 import cartopy.crs as ccrs
 import cmocean
 from utils import plot_hpge
+
+# ------------------------------------------------------------------------------------------
+def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
+    new_cmap = colors.LinearSegmentedColormap.from_list(
+        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
+        cmap(np.linspace(minval, maxval, n)))
+    return new_cmap
 
 # ==============================================================================
 # Input parameters
@@ -75,10 +84,10 @@ for vco in range(len(vcoord)):
         lon = ds_dom["glamf"]
         lat = ds_dom["gphif"]
         var = ds_hpge[varss[env]] * 100. # in cm/s 
-        colmap = 'hot' #cmocean.cm.ice
+        colmap = truncate_colormap(plt.get_cmap('nipy_spectral'), minval=0.0, maxval=0.9, n=100)
         vmin = 0.0
-        vmax = 5.
-        cbar_extend = 'max' #"max"
+        vmax = 10.
+        cbar_extend = 'max'
         #if vco == 4:
         if vco == 1:
            cbar_label = r"$\times 10^{-2}$ [$m\;s^{-1}$]"
@@ -86,7 +95,7 @@ for vco in range(len(vcoord)):
            cbar_label = ""
         cbar_hor = 'horizontal'
         map_lims = [lon0, lon1, lat0, lat1]
-        cn_lev = [0., 250., 500., 1000., 1500, 2000., 3000., 4000.]
+        cn_lev = [1000., 2000., 3000.]
 
         plot_hpge(fig_name, fig_path, lon, lat, var, proj, colmap, 
                   vmin, vmax, cbar_extend, cbar_label, cbar_hor, map_lims, bathy, cn_lev)

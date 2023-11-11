@@ -23,9 +23,13 @@ import xarray as xr
 # Input files
 # ==============================================================================
 
+base_dir = "/your_local_path"
+
 # Folder path containing HPGE spurious currents velocity files 
 MAINdir = '/local/path/to/model_data'
 HPGElst = ['zps','vqs','szt','mes']
+
+loc_msk = base_dir + '/models_geometry/loc_area/bathymetry.loc_area.dep2800_novf_sig1_stn9_itr1.nc'
 
 # Name of the zonal and meridional velocity variables
 Uvar = 'uo'
@@ -44,12 +48,32 @@ fig, ax = plt.subplots(figsize=(16,9))
 
 for exp in range(len(HPGElst)):
 
+    # Loading domain geometry
+    ds_dom  = xr.open_dataset(DOMCFG[exp]).squeeze()
+
+    # Computing land-sea masks
+    ds_dom = compute_masks(ds_dom, merge=True)
+
+    ds_dom = ds_dom.isel(x=slice(920,1220),y=slice(905,1140))
+
+    e3t = ds_dom["e3t_0"].squeeze()
+    e2t = ds_dom["e2t"].squeeze()
+    e1t = ds_dom["e1t"].squeeze()
+
+    e1t = e1t.where(ds_dom.tmask==1)
+    e2t = e2t.where(ds_dom.tmask==1)
+    e3t = e3t.where(ds_dom.tmask==1)
+
+    e1t = e1t.where(loc_msk==1)
+    e2t = e2t.where(loc_msk==1)
+    e3t = e3t.where(loc_msk==1)
+
     HPGEdir = MAINdir + HPGElst[exp]
 
     Ufiles = sorted(glob.glob(HPGEdir+'/*grid-U.nc'))
     Vfiles = sorted(glob.glob(HPGEdir+'/*grid-V.nc'))
 
-    max_hpge = []
+    v_avg = []
 
     for F in range(len(Ufiles)):
 
@@ -57,24 +81,31 @@ for exp in range(len(HPGElst)):
 
         ds_U = xr.open_dataset(Ufiles[F], chunks={chunk_var:chunk_size})
         ds_V = xr.open_dataset(Vfiles[F], chunks={chunk_var:chunk_size})
+        ds_U = ds_U.rename_dims({'depthu':'z'})
+        ds_V = ds_V.rename_dims({'depthv':'z'})
         ds_U = ds_U.isel(x=slice(920,1220), y=slice(905,1140))
         ds_V = ds_V.isel(x=slice(920,1220), y=slice(905,1140))
         U4   = ds_U[Uvar]
         V4   = ds_V[Vvar]
 
         # rename some dimensions
-        U4 = U4.rename({U4.dims[0]: 't', U4.dims[1]: 'k'})
-        V4 = V4.rename({V4.dims[0]: 't', V4.dims[1]: 'k'})
+        U4 = U4.rename({U4.dims[0]: 't'})
+        V4 = V4.rename({V4.dims[0]: 't'})
 
         # interpolating from U,V to T
         U = U4.rolling({'x':2}).mean().fillna(0.)
         V = V4.rolling({'y':2}).mean().fillna(0.) 
     
-        hpge = np.sqrt(np.power(U,2) + np.power(V,2))
-        max_hpge.extend(hpge.max(dim=('k','y','x')).values.tolist())
+        vel = np.sqrt((np.power(U,2) + np.power(V,2)))
+        vel = vel.where(ds_dom.tmask==1)
+        vel = vel.where(loc_msk==1)
 
-    ax.plot(max_hpge.data, linestyle="-", linewidth=5, color=cols[exp], label=HPGElst[exp])
-       
+        cel_vol = e1t * e2t * e3t
+        dom_vol = cel_vol.sum(skipna=True)
+        v_avg.extend(((cel_vol*vel).sum(dim=["x","y","z"], skipna=True) / dom_vol).values.tolist())
+
+    ax.plot(v_avg, linestyle="-", linewidth=5, color=cols[exp], label=HPGElst[exp])
+           
 plt.rc('legend', **{'fontsize':30})
 ax.legend(loc=0, ncol=1, frameon=False)
 ax.set_xlabel('Days', fontsize=35)
@@ -83,5 +114,5 @@ ax.tick_params(axis='both',which='major', labelsize=30)
 #ax.set_xlim(0.,30)
 #ax.set_ylim(0.,0.3)
 ax.grid(True)
-name = 'max_hpge_timeseries.png'
+name = 'avg_vel_timeseries.png'
 plt.savefig(name)
