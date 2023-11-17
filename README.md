@@ -3,7 +3,7 @@ Repository to support the study presented in:
 
 Localised general vertical coordinates for quasi-Eulerian ocean models: the Nordic over ows test-case
 
-The code of this repository uses and reproduces the data archived at PUT ZENODO DOI
+The code of this repository uses and reproduces the data archived at https://zenodo.org/records/8055023 
 
 ## Installing dependencies
 
