@@ -1,9 +1,11 @@
 # loc_gvc-GO_ovf
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10149529.svg)](https://doi.org/10.5281/zenodo.10149529)
+
 Repository to support the study presented in:
 
 Localised general vertical coordinates for quasi-Eulerian ocean models: the Nordic over ows test-case
 
-The code of this repository uses and reproduces the data archived at https://zenodo.org/records/8055023 
+The code of this repository uses and reproduces the data archived in [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8055023.svg)](https://doi.org/10.5281/zenodo.8055023) 
 
 ## Installing dependencies
 
